@@ -16,7 +16,7 @@ public class MemCache {
 			new PriorityQueue<>((o1, o2) -> o2.getTime().compareTo(o1.getTime()));
 
 	public void add(News news) {
-		if (priorityQ.size() > CACHE_SIZE) {
+		if (priorityQ.size() >= CACHE_SIZE) {
 			priorityQ.remove();
 		}
 		priorityQ.add(news);

@@ -65,5 +65,10 @@ public class News {
 	public void setContentType(ContentType contentType) {
 		this.contentType = contentType;
 	}
+	@Override
+	public String toString() {
+		return "\n News [id=" + id + ", headLine=" + headLine + ", time=" + time + "]\n";
+	}
+	
 	
 }
