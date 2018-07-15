@@ -43,8 +43,7 @@ public class MemCache {
 					priorityQ.add(addObj);
 					top100List.add(addObj);
 				} catch (InterruptedException e) {
-					System.out.println("Some error occured while adding in cache");
-					e.printStackTrace();
+					System.err.println("Some error occured while adding in cache");
 				}
 			}
 		}

@@ -31,8 +31,11 @@ List of REST end point:
 
 
 a)	Sonar lint / EclEmma scan Snapshot 
+ https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/SonarLintReport.PNG
 b)	Final Output Snapshot 
 c)	Junit Coverage Snapshot
+https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/JunitTestSuitCoverage.PNG
+https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/JunitTestSuitCoverage.PNG
  
 
 Section 4 

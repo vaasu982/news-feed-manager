@@ -23,23 +23,31 @@ public class NewsService {
 	@Autowired
 	private MemCache memCache;
 	@Autowired
-	private  ContentTypeRepository contentTypeRepo;
+	private ContentTypeRepository contentTypeRepo;
 	@Autowired
-	private  PriorityRepository priorityRepository;
+	private PriorityRepository priorityRepository;
 
 	public News addAndProcessNews(News news) {
 		if (news != null && news.getTime() == null) {
 			news.setTime(new Date());
 		}
-		ContentType contentType = contentTypeRepo.findByNameIgnoreCase(news.getContentType().getName());
-		news.setContentType(contentType);
-		Priority priority = priorityRepository.findByNameIgnoreCase(news.getPriority().getName());
-		news.setPriority(priority);
+		if (news != null && news.getContentType() != null) {
+			ContentType contentType = contentTypeRepo.findByNameIgnoreCase(news.getContentType().getName());
+			news.setContentType(contentType);
+		} else {
+			throw new IllegalArgumentException();
+		}
+		if (news.getPriority() != null) {
+			Priority priority = priorityRepository.findByNameIgnoreCase(news.getPriority().getName());
+			news.setPriority(priority);
+		} else {
+			throw new IllegalArgumentException();
+		}
+
 		if (NewsConstant.BREAKING_NEWS.equalsIgnoreCase(news.getPriority().getName())) {
 			memCache.add(news);
 		}
 		news = newsRepo.save(news);
-		System.out.println("Generated ID:" + news.getId());
 		return news;
 	}
 
