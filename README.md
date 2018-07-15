@@ -7,10 +7,33 @@ Section 2:
 	JDK Version: java version "1.8.0_151"
 
 Section 3 
+
+List of REST end point:
+1.	localhost:8080/publish/news 	[Publish/Submit your news in JSON format. Call type: POST]
+	Screen shot link :	
+	https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/PublishNews1.PNG
+	https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/PublishNews2.PNG
+
+2.	localhost:8080/news/top-breaking-news	[Top 100 breaking news, fetches from cache. Call type: GET]
+	Screen shot link :
+	https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/Top100BreakingNews1.PNG
+	https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/Top100BreakingNews2.PNG
+	
+3. 	localhost:8080/news/get/{id} 	[Get news by id. Call type: GET]
+	Screen shot link :
+	https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/GetNewsById.PNG
+4. 	localhost:8080/news/top-news		[Top news irrespective of priority order by time desc. Call type: GET]
+	Screen shot link :
+	https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/TopNews.PNG
+5.	localhost:8080/news/top-news/{type}		[Top news provided by type(Sports/Finance/General) and order by time desc. Call type: GET]
+	Screen shot link :
+	https://github.com/vaasu982/news-feed-manager/blob/master/screenshots/TopNewsByType.PNG
+
+
 a)	Sonar lint / EclEmma scan Snapshot 
 b)	Final Output Snapshot 
 c)	Junit Coverage Snapshot
-Note: (You can link directly to the raw version of an image from your image folder. Hence from section 1.1 if your GIT Link is : https://github.com/nescafe2018/intrvw_sq , then you can have the following text in your readme ![SonarLint] (https://github.com/nescafe2018/intrvw_sq/<Link of you image) )
+ 
 
 Section 4 
 Licensing 
