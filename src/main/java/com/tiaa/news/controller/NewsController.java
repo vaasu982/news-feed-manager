@@ -2,6 +2,7 @@ package com.tiaa.news.controller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,7 +52,7 @@ public class NewsController {
 	}
 	
 	@RequestMapping(value = "/top-breaking-news", method = RequestMethod.GET)
-	public List<News> getTop100BreakingNews() {
+	public Set<News> getTop100BreakingNews() {
 		return  newsService.getTopBreakingNews();
 	}
 	

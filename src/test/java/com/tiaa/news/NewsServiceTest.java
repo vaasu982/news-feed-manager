@@ -4,7 +4,9 @@ import static org.mockito.Matchers.anyString;
 import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.junit.Assert;
 import org.junit.Before;
@@ -72,10 +74,10 @@ public class NewsServiceTest {
 
 	@Test
 	public void testGetTopBreakingNews() {
-		List<News> list = new ArrayList<>();
+		Set<News> list = new HashSet();
 		list.add(new News());
 		when(memCache.getTopNews()).thenReturn(list);
-		List<News> returnList = newsService.getTopBreakingNews();
+		Set<News> returnList = newsService.getTopBreakingNews();
 		Assert.assertTrue(returnList.size()>0);
 	}
 

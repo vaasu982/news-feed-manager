@@ -2,8 +2,8 @@ package com.tiaa.service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -47,7 +47,7 @@ public class NewsService {
 		return newsRepo.findOne(id);
 	}
 
-	public List<News> getTopBreakingNews() {
+	public Set<News> getTopBreakingNews() {
 		return memCache.getTopNews();
 	}
 

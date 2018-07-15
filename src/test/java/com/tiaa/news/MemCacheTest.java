@@ -1,13 +1,9 @@
 package com.tiaa.news;
 
-import static org.junit.Assert.*;
-
 import java.util.Date;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.InjectMocks;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.tiaa.cache.MemCache;
 import com.tiaa.news.model.News;
@@ -19,13 +15,16 @@ public class MemCacheTest {
 
 	@Test
 	public void addTest() throws InterruptedException {
-		for(int i =0 ; i <150; i++) {
+		for(int i =0 ; i <1500; i++) {
 			News news = new News();
-			news.setTime(new Date());
-			//Thread.sleep(1);
+			Date d1 = new Date();
+			System.out.println("Added :"+d1);
+			news.setTime(d1);
+			Thread.sleep(1001);
 			memCache.add(news);
 		}
-		Assert.assertTrue(100 == memCache.getTopNews().size()  );
+		System.out.println(memCache.getTopNews());
+		Assert.assertTrue(memCache.CACHE_SIZE == memCache.getTopNews().size());
 	}
 	
 	 
