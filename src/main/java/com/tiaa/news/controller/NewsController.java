@@ -52,7 +52,7 @@ public class NewsController {
 	
 	@RequestMapping(value = "/top-breaking-news", method = RequestMethod.GET)
 	public List<News> getTop100BreakingNews() {
-		return  newsService.getTopNews();
+		return  newsService.getTopBreakingNews();
 	}
 	
 	@RequestMapping(value = "/top-news", method = RequestMethod.GET)
@@ -60,9 +60,9 @@ public class NewsController {
 		return  newsService.getTopNews();
 	}
 	
-	@RequestMapping(value = "/get/top-news/{type}", method = RequestMethod.GET)
+	@RequestMapping(value = "/top-news/{type}", method = RequestMethod.GET)
 	public List<News> getTopNews(@PathVariable String type) {
-		return  newsService.getTopNews();
+		return  newsService.getTopNewsByType(type);
 	}
 	
 	

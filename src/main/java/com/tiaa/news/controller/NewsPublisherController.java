@@ -16,8 +16,14 @@ public class NewsPublisherController {
 	private NewsService newService;
 	
 	@RequestMapping(method = RequestMethod.POST, value ="/news")
-	public void addNews(@RequestBody News news) {
+	public String addNews(@RequestBody News news) {
+		try {
 		newService.addAndProcessNews(news);
+		return "Published ID :"+news.getId();
+		} catch(Exception  e) {
+			return "Unable to Publish. Invalid format. "+ e.getMessage();
+		}
+		
 	}
 	
 }
